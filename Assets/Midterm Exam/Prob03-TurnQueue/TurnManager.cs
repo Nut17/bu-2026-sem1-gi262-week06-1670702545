@@ -54,6 +54,13 @@ namespace MidtermExam.Prob03
         public bool ExecuteSwapQueue(Player targetPlayer, Player afterPlayer)
         {
             if (CurrentPlayer == null || TurnQueue == null) return false;
+            for(LinkedListNode<Player> node = TurnQueue.First; node != null; node = node.Next)
+            {
+                if (node.Value == targetPlayer || node.Value == afterPlayer)
+                {
+                    continue;
+                }
+            }
             return CurrentPlayer.SwapQueue(TurnQueue, targetPlayer, afterPlayer);
         }
     }
