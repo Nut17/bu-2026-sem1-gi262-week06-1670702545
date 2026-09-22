@@ -2,16 +2,29 @@ using UnityEngine;
 
 namespace MidtermExam.Prob01
 {
-    public class Equipment
+    public class Character : GameEntity
     {
-        // TODO: Implement inheritance, fields and methods according to Class Diagram
-        float durability;
-    }
-    class Weapon : Equipment
-    {
-        public void Attack()
+        public string characterName;
+
+
+        protected float moveSpeed;
+
+
+        private int level;
+
+
+        public virtual void Attack(GameEntity target)
         {
-            // Implementation for weapon attack
+
         }
+        protected virtual void LevelUp()
+        {
+
+        }
+
+
+
+
+        // TODO: Implement inheritance, fields and methods according to Class Diagram
     }
 }

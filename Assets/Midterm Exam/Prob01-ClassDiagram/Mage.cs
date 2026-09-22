@@ -9,6 +9,11 @@ namespace MidtermExam.Prob01
         {
             public void CastFireball()
             {
+                for (int i = 0; i < 10; i++)
+                {
+
+                }
+
                 // Implementation for casting a fireball
             }
         }

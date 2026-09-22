@@ -12,5 +12,12 @@ namespace MidtermExam.Prob01
                 string attackType = "Warrior Attack";
             }
         }
+        class WarriorDefense : Warrior
+        {
+            public void Defend()
+            {
+                string defenseType = "Warrior Defense";
+            }
+        }
     }
 }

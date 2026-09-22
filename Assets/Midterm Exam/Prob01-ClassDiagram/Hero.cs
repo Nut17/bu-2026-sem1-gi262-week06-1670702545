@@ -2,19 +2,27 @@ using UnityEngine;
 
 namespace MidtermExam.Prob01
 {
-    public class Hero
+    public class Hero : Character
     {
+        public int currentExp;
+        private int gold;
+
+        public override void Attack(GameEntity target)
+        {
+            base.Attack(target);
+        }
+        
+        public void CollectGold(int amount)
+        {
+            
+        }
+
+        protected override void LevelUp()
+        {
+            base.LevelUp();
+        }
+
+
         // TODO: Implement inheritance, fields and methods according to Class Diagram
-        virtual public void Attack()
-        {
-            string attackType = "Basic Attack";
-        }
-        class HeroAttack : Hero
-        {
-            public void Attack()
-            {
-                string attackType = "Special Attack";
-            }
-        }
     }
 }

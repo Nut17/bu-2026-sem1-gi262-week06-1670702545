@@ -4,21 +4,22 @@ namespace MidtermExam.Prob01
 {
     public class InventoryItem
     {
-        // TODO: Implement fields and methods according to Class Diagram
-        string itemName;
-        interface IUsable
+        public string itemName;
+        protected int weight;
+
+        private int itemValue;
+
+        class InventoryItemUse : InventoryItem
         {
-            void Use();
-        }
-        class HealthPotion : InventoryItem, IUsable
-        {
-            public void Use()
+            public void Use(Character user)
             {
-                // Implement the logic for using a health potion
-                Debug.Log("Using Health Potion");
+                string useType = "Inventory Item Use";
             }
         }
 
+        public virtual void Use(Character user) { }
+
+
+        // TODO: Implement fields and methods according to Class Diagram
     }
 }
-

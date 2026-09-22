@@ -12,43 +12,68 @@ namespace MidtermExam.Prob02
         /// <returns>LinkedList ที่ได้รับการเรียงลำดับจากน้อยไปมากแล้ว</returns>
         public LinkedList<int> SortAscending(LinkedList<int> list)
         {
-            // TODO: Implement sorting algorithm for LinkedList<int> (Ascending)
-            for (LinkedListNode<int> node = list.First; node != null; node = node.Next)
+            // ช็คลิสต์ว่างหรือมีโหนด <= 1
+            if (list == null || list.Count <= 1)
             {
-                for (LinkedListNode<int> innerNode = node.Next; innerNode != null; innerNode = innerNode.Next)
-                {
-                    if (node.Value > innerNode.Value)
-                    {
-                        int temp = node.Value;
-                        node.Value = innerNode.Value;
-                        innerNode.Value = temp;
-                    }
-                }
+                return list;
             }
+
+            bool swapped;
+            do
+            {
+                swapped = false;
+                LinkedListNode<int> current = list.First;
+
+                while (current != null && current.Next != null)
+                {
+                    // ถ้าน้อยไปมาก: ตัวหน้า > ตัวหลัง ให้สลับ
+                    if (current.Value > current.Next.Value)
+                    {
+                        int temp = current.Value;
+                        current.Value = current.Next.Value;
+                        current.Next.Value = temp;
+
+                        swapped = true;
+                    }
+                    current = current.Next;
+                }
+            } while (swapped);
+
             return list;
         }
 
-        /// <summary>
-        /// เรียงลำดับตัวเลขใน LinkedList จากมากไปน้อย (Descending Order)
-        /// </summary>
-        /// <param name="list">LinkedList ของตัวเลข integer</param>
-        /// <returns>LinkedList ที่ได้รับการเรียงลำดับจากมากไปน้อยแล้ว</returns>
+        // ข้อ 2.2: เรียงลำดับจากมากไปน้อย (SortDescending)
         public LinkedList<int> SortDescending(LinkedList<int> list)
         {
-            // TODO: Implement sorting algorithm for LinkedList<int> (Descending)
-            for (LinkedListNode<int> node = list.First; node != null; node = node.Next)
+            // Edge Cases: เช็คลิสต์ว่างหรือมีโหนด <= 1
+            if (list == null || list.Count <= 1)
             {
-                for (LinkedListNode<int> innerNode = node.Next; innerNode != null; innerNode = innerNode.Next)
-                {
-                    if (node.Value < innerNode.Value)
-                    {
-                        int temp = node.Value;
-                        node.Value = innerNode.Value;
-                        innerNode.Value = temp;
-                    }
-                }
+                return list;
             }
+
+            bool swapped;
+            do
+            {
+                swapped = false;
+                LinkedListNode<int> current = list.First;
+
+                while (current != null && current.Next != null)
+                {
+                    // ถ้ามากไปน้อย: ตัวหน้า < ตัวหลัง ให้สลับ
+                    if (current.Value < current.Next.Value)
+                    {
+                        int temp = current.Value;
+                        current.Value = current.Next.Value;
+                        current.Next.Value = temp;
+
+                        swapped = true;
+                    }
+                    current = current.Next;
+                }
+            } while (swapped);
+
             return list;
         }
     }
 }
+ 

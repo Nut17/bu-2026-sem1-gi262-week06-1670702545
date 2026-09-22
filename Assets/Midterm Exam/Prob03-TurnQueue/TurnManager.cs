@@ -40,6 +40,7 @@ namespace MidtermExam.Prob03
 
             Player current = TurnQueue.First.Value;
             TurnQueue.RemoveFirst();
+
             TurnQueue.AddLast(current);
 
             return TurnQueue.First.Value;
@@ -58,7 +59,13 @@ namespace MidtermExam.Prob03
             {
                 if (node.Value == targetPlayer || node.Value == afterPlayer)
                 {
-                    continue;
+                    for(LinkedListNode<Player> innerNode = TurnQueue.First; innerNode != null; innerNode = innerNode.Next)
+                    {
+                        if (innerNode.Value == targetPlayer || innerNode.Value == afterPlayer)
+                        {
+                            continue;
+                        }
+                    } break;
                 }
             }
             return CurrentPlayer.SwapQueue(TurnQueue, targetPlayer, afterPlayer);

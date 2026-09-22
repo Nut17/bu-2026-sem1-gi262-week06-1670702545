@@ -18,6 +18,17 @@ namespace MidtermExam.Prob01
             {
                 // Implementation for minion attack
             }
+            class MinionDefense : MinionMonster
+            {
+                public void Defend()
+                {
+                    // Implementation for minion defense
+                }
+
+
+            }
+
+
         }
     }
 }

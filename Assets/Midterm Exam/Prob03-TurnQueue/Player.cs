@@ -10,7 +10,11 @@ namespace MidtermExam.Prob03
     public class Player
     {
         public string Name;
+
+        public string Description;
+
         public int Health;
+
 
         public Player(string name, int health = 100)
         {
@@ -30,6 +34,7 @@ namespace MidtermExam.Prob03
                 target.TakeDamage(10);
             }
         }
+
 
         /// <summary>
         /// ลดค่า Health ของผู้เล่นตาม damage ที่ได้รับ (ไม่ลดต่ำกว่า 0)
